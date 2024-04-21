@@ -89,12 +89,16 @@ p{
 .animal {
     flex: 0 0 48%;
     margin-bottom: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
     background-color: rgb(213, 174, 78);
 }
 
 .animal img {
-    width: 100%;
+    width: 98%;
     height: auto;
+    padding-right: 5px;
+    padding-left:10px;
 }
 
 .animal p {
