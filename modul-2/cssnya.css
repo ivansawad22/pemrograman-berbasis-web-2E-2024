@@ -36,6 +36,15 @@ background: #112C66;
 ul li:hover ul.dropdown {
 display: block;
 }
+#centered-text {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  text-align: center; 
+  color: rgb(247, 248, 248); 
+  font-size: 2rem;  
+}
 section#hero{
     height: calc(100vh - 60px);  
     display: flex;
@@ -49,4 +58,11 @@ section#hero{
     #hero h1{
       font-size: 3rem;
       margin-bottom: 1rem;
-    }
+    }   
+.background-text{
+  font-size: 20px;
+  font-weight: bold;
+  background-color: cadetblue;
+  background-repeat: no-repeat;
+  fill-opacity: 20%;
+}
