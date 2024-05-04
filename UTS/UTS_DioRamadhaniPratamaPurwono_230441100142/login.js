@@ -4,7 +4,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    if (username === 'nagita' && password === 'nagita123') {
+    if (username === 'dior' && password === 'dio123') {
         window.location.href = 'calculator.html';
         alert('username atau password benar')
     } else {
