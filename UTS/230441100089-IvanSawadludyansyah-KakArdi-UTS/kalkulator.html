@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="sty">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function hitung() {
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+            var operator = document.getElementById("operator").value;
+            var hasil;
+
+            switch (operator) {
+                case '+':
+                    hasil = angka1 + angka2;
+                    break;
+                case '-':
+                    hasil = angka1 - angka2;
+                    break;
+                case '*':
+                    hasil = angka1 * angka2;
+                    break;
+                case '/':
+                    hasil = angka1 / angka2;
+                    break;
+                case '%':
+                    hasil = angka1 % angka2;
+                    break;
+                default:
+                    hasil = "Operasi tidak valid";
+            }
+
+            // Menampilkan hasil pada tabel
+            var table = document.getElementById("hasilTable");
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            cell1.innerHTML = table.rows.length - 1;
+            cell2.innerHTML = sessionStorage.getItem("username");
+            cell3.innerHTML = angka1;
+            cell4.innerHTML = operator;
+            cell5.innerHTML = angka2;
+            cell6.innerHTML = hasil;
+        }
+    </script>
+</head>
+<body>
+    <h2>Kalkulator</h2>
+    <form>
+        <label for="angka1">Angka 1:</label>
+        <input type="number" id="angka1" name="angka1"><br><br>
+        <label for="operator">Operator:</label>
+        <select id="operator" name="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select><br><br>
+        <label for="angka2">Angka 2:</label>
+        <input type="number" id="angka2" name="angka2"><br><br>
+        <button type="button" onclick="hitung()">Hitung</button>
+    </form>
+
+    <br><br>
+    <h3>Riwayat Perhitungan:</h3>
+    <table id="hasilTable" class="table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama User</th>
+                <th>Angka 1</th>
+                <th>Operator</th>
+                <th>Angka 2</th>
+                <th>Hasil</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Riwayat perhitungan akan ditambahkan oleh JavaScript -->
+        </tbody>
+    </table>
+</body>
+</html>
